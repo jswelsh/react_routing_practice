@@ -2,14 +2,17 @@ import React from 'react';
 import UsersCard from './UsersCard';
 import './UsersList.css';
 
-// ...
-
 const listOfUsersPerRow = (users, row, itemsPerRow, match) =>
   users
     .slice((row - 1) * itemsPerRow, row * itemsPerRow)
     .map(user => <UsersCard user={user} key={user.id} match={match} />);
 
-    // ...
+const UsersList = ({ users, itemsPerRow = 2, match }) => (
+  <div className="cards">
+    <h3 className="is-size-3 has-text-centered">Users</h3>
+    {listOfRows(users, itemsPerRow, match)}
+  </div>
+);
 
 const listOfRows = (users, itemsPerRow, match) => {
   const numberOfUsers = users.length;
@@ -24,11 +27,6 @@ const listOfRows = (users, itemsPerRow, match) => {
   ));
 };
 
-const UsersList = ({ users, itemsPerRow = 2, match }) => (
-  <div className="cards">
-    <h3 className="is-size-3 has-text-centered">Users</h3>
-    {listOfRows(users, itemsPerRow, match)}
-  </div>
-);
+
 
 export default UsersList;

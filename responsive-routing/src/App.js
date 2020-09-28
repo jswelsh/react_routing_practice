@@ -1,11 +1,11 @@
 
 
 import React, { Component } from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom'; // add Switch
-import Media from 'react-media'; // add Media
+import { Route, Switch, Redirect } from 'react-router-dom';
+import Media from 'react-media';
 import Nav from './Nav';
-import UsersList from './Users/UsersList'; // add UsersList
-import UsersDetails from './Users/UsersDetails'; // add UsersDetails
+import UsersList from './Users/UsersList';
+import UsersDetails from './Users/UsersDetails';
 import UsersDashboard from './Users/UsersDashboard';
 import mockData from './MOCK_DATA.json'
 import './App.css';
@@ -15,9 +15,7 @@ class App extends Component {
 
   state = {
     users: [ ...mockData ]
-  }  // ...
-
-
+  }
 
   render() {
     return (
@@ -68,7 +66,6 @@ class App extends Component {
       </div>
     );
   }
-
 }
 
 export default App;
